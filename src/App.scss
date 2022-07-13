@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$baseColor: #e7d400;
+$bodyColor: #e3efed;
+$white: #ffffff;
+$green: #5e905d;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ml2 {
+  margin-left: 2.5rem;
+}
+.mr2 {
+  margin-right: 2.5rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lexend Exa", sans-serif;
+  //   overflow-x: hidden;
+  background-color: $bodyColor;
+}
+
+// todo : Hero Section
+
+.hero {
+  &__mobile__menu {
+    opacity: 0;
+    animation: mobileMenuAnimation 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    transform: translateY(10rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    bottom: 0;
+    height: 7.55vh;
+    background-color: $bodyColor;
+    z-index: 2;
+    // display: none;
+
+    li {
+      display: flex;
+      flex-direction: column;
+
+      &:nth-of-type(1) {
+        padding-left: 1.5rem;
+
+        img {
+          transform: scale(0.7);
+        }
+      }
+      &:nth-of-type(2) {
+        img {
+          transform: scale(0.6);
+          margin-top: -0.5rem;
+        }
+        span {
+          margin-top: -0.5rem;
+        }
+      }
+      &:nth-of-type(3) {
+        position: relative;
+        img {
+          transform: scale(1.2);
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          background-color: $baseColor;
+          border-radius: 50%;
+          top: -70%;
+          left: -70%;
+          height: 250%;
+          aspect-ratio: 1;
+          z-index: -1;
+        }
+      }
+      &:nth-of-type(4) {
+        transform: translateX(1rem);
+        img {
+          transform: scale(0.8);
+        }
+      }
+      &:nth-of-type(5) {
+        padding-right: 1.5rem;
+
+        img {
+          margin-top: -1.6rem;
+          transform: scale(0.38);
+        }
+        span {
+          margin-top: -1.6rem;
+        }
+      }
+    }
+  }
+  &__upper {
+    background-image: url(./Assets/mobile/Mobile_hero_background.png);
+
+    // background-position-x: -1.5rem;
+    // background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 4.5rem;
+
+    button {
+      animation: loading2 2s;
+      animation-fill-mode: forwards;
+      transform: translateX(-20rem);
+
+      animation-delay: 0.5s;
+      margin-top: 4rem;
+      padding: 1rem 3rem 1rem 3rem;
+      border: none;
+      background-color: $baseColor;
+      border-radius: 1rem;
+      font-weight: 300;
+      font-family: inherit;
+      font-size: 2rem;
+      color: #3d3d3d;
+    }
+
+    &__text {
+      opacity: 0;
+      animation: opacity 2s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+      position: relative;
+      font-size: 3.65rem;
+      width: 86%;
+      margin-inline: auto;
+      font-weight: 500;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 95vw;
+        margin-left: 0;
+        background: $baseColor;
+        opacity: 5%;
+        top: 27%;
+        left: -1.75rem;
+      }
+    }
+  }
+
+  &__menu {
+    background-image: url(./Assets/menu_background.svg);
+    background-position: -5rem;
+    background-size: cover;
+    width: 100vw;
+
+    &__logo {
+      opacity: 0;
+      padding-top: 1.5rem;
+      animation: loading3 2s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+  }
+
+  &__lower {
+    // height: 100vh;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    &__text {
+      text-align: center;
+      font-weight: 400;
+      font-size: 2.8rem;
+      color: #4f4f4f;
+      line-height: 3.8rem;
+    }
+
+    ul {
+      width: 85%;
+      margin-inline: auto;
+
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      div:nth-of-type(1) {
+      }
+
+      li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        font-weight: 200;
+        font-size: 2.8rem;
+        margin-top: 6rem;
+        div {
+          position: relative;
+          &::after {
+            content: "";
+            text-align: center;
+            display: block;
+            position: absolute;
+            background-color: $white;
+            aspect-ratio: 1;
+            height: 251%;
+            border-radius: 50%;
+            z-index: -1;
+            top: -74%;
+            left: 20%;
+          }
+          &[num="1"] {
+            &:after {
+              left: 0%;
+            }
+          }
+        }
+        span {
+          margin-top: 4rem;
+          font-size: 1.8rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+// todo : Details Section
+.details__container {
+  &__content {
+    &__text {
+      color: $green;
+      font-size: 2.8rem;
+      font-weight: 500;
+      line-height: 4rem;
+    }
+    &__image {
+      margin-top: -17rem;
+      position: relative;
+      &::before {
+        content: "Our own garden";
+        color: $white;
+        font-size: 1.8rem;
+        top: 72%;
+        left: 20%;
+        position: absolute;
+      }
+
+      img {
+        margin-inline: auto;
+        width: 95%;
+        object-fit: cover;
+      }
+    }
+    &__paragraph {
+      margin-top: -10rem;
+      margin-bottom: 0rem;
+      line-height: 3.5rem;
+      font-size: 1.8rem;
+      font-weight: 300;
+
+      &::after {
+        content: " ";
+        display: block;
+        margin-top: 2rem;
+        background-image: url(./Assets/icons/Arrow1.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 10rem;
+      }
+    }
+  }
+}
+// todo : Keyframes
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes loading3 {
+  0% {
+    opacity: 0;
+    transform: translateX(30rem);
+  }
+  80% {
+    opacity: 0.9;
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes mobileMenuAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  80% {
+    opacity: 0.9;
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
