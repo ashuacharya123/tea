@@ -18,7 +18,7 @@ const Details = () => {
           className="details__container__content__paragraph ml2 mr2"
           data-aos="fade-up"
           // data-aos-offset="200"
-          data-aos-delay="10"
+          data-aos-delay="1"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"

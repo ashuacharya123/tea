@@ -6,6 +6,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .ml2 {
@@ -314,6 +315,36 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 10rem;
+}
+
+.health__container {
+  background-color: #6f6a66;
+  height: 100vh;
+  color: #ffffff;
+}
+
+.health__container__content {
+  height: 100%;
+  background-image: url(./Assets/mobile/Mobile_health_benifits.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.health__container__content__text {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  opacity: 0.6;
+  font-size: 3.5rem;
+}
+
+.health__container__content__health {
+  margin-left: 3rem;
+  height: 70%;
+}
+
+.health__container__content__health img {
+  height: 100%;
 }
 
 @-webkit-keyframes opacity {
