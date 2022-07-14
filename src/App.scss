@@ -47,31 +47,50 @@ body {
     left: 0;
     width: 100vw;
     bottom: 0;
-    height: 7.55vh;
+    height: 7.55rem;
     background-color: $bodyColor;
     z-index: 2;
+
+    border-top: 1px solid #4f4f4f;
     // display: none;
 
-    li {
+    .active {
+      position: relative;
+      &[type="explore"]::before {
+        left: -1.5rem;
+      }
+      &[type="contact"]::before {
+        left: -1.5rem;
+        width: 150%;
+      }
+    }
+    .active::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 160%;
+      background: black;
+      top: -1.8rem;
+      left: -1rem;
+    }
+    a {
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: black;
+
+      div {
+        text-align: center;
+      }
 
       &:nth-of-type(1) {
         padding-left: 1.5rem;
+      }
+      &:nth-of-type(5) {
+        padding-right: 1.5rem;
+      }
 
-        img {
-          transform: scale(0.7);
-        }
-      }
-      &:nth-of-type(2) {
-        img {
-          transform: scale(0.6);
-          margin-top: -0.5rem;
-        }
-        span {
-          margin-top: -0.5rem;
-        }
-      }
       &:nth-of-type(3) {
         position: relative;
         img {
@@ -89,23 +108,6 @@ body {
           height: 250%;
           aspect-ratio: 1;
           z-index: -1;
-        }
-      }
-      &:nth-of-type(4) {
-        transform: translateX(1rem);
-        img {
-          transform: scale(0.8);
-        }
-      }
-      &:nth-of-type(5) {
-        padding-right: 1.5rem;
-
-        img {
-          margin-top: -1.6rem;
-          transform: scale(0.38);
-        }
-        span {
-          margin-top: -1.6rem;
         }
       }
     }
@@ -166,10 +168,11 @@ body {
     background-image: url(./Assets/menu_background.svg);
     background-position: -5rem;
     background-size: cover;
-    width: 100vw;
+    width: 100%;
 
     &__logo {
       opacity: 0;
+      display: inline-block;
       padding-top: 1.5rem;
       animation: loading3 2s;
       animation-fill-mode: forwards;
@@ -311,6 +314,102 @@ body {
       height: 70%;
       img {
         height: 100%;
+      }
+    }
+  }
+}
+// todo : Shop Section
+
+.shop__container {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  column-gap: 10rem;
+
+  &__content {
+    margin-bottom: 6rem;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='2' stroke-dasharray='60%2c 70' stroke-dashoffset='34' stroke-linecap='square'/%3e%3c/svg%3e");
+    border: 0.1px dashed black;
+    &__card__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__card__image {
+      }
+      &__card__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        span {
+          font-size: 3rem;
+          font-weight: 400;
+          li {
+            list-style: none;
+            display: inline-block;
+            color: black;
+            opacity: 0.6;
+            position: relative;
+
+            &::before {
+              content: "";
+              display: block;
+              width: 100%;
+              position: absolute;
+              top: 50%;
+              height: 2px;
+              background-color: black;
+              opacity: 0.9;
+            }
+          }
+          &:nth-of-type(1) {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            button {
+              font-family: inherit;
+              text-align: center;
+              background-color: $baseColor;
+              border: none;
+              border-radius: 2rem;
+              padding: 0.6rem 1rem 0.6rem 1rem;
+            }
+          }
+          &:nth-of-type(2) {
+            width: 95%;
+            h6 {
+              margin-top: 2rem;
+              margin-bottom: 3rem;
+              font-weight: 400;
+              font-size: 1.8rem;
+            }
+            button {
+              margin-bottom: 3rem;
+              background-color: $baseColor;
+              font-family: inherit;
+              font-weight: 300;
+              font-size: 1.85rem;
+              border: none;
+              display: block;
+              width: 100%;
+              padding: 1.2rem 0 1.2rem 0;
+              border-radius: 1rem;
+
+              &:nth-of-type(1) {
+                background-color: transparent;
+                border: 1.2px solid black;
+                margin-bottom: 2rem;
+              }
+            }
+          }
+        }
       }
     }
   }

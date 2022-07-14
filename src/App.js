@@ -10,12 +10,12 @@ function App() {
   return (
     <div className="App ">
       <Hero />
-
       <Details />
       <HealthBenifits />
       <Shop />
       <Contact />
       <Footer />
+      <HealthBenifits />
     </div>
   );
 }

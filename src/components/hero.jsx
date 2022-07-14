@@ -2,29 +2,31 @@ import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import logo from "../Assets/icons/LOGO.svg";
-import Mobile_menu from "./mobile_menu";
+import MobileMenu from "./mobile_menu";
 import Cart from "./cart";
 
 const Hero = () => {
   AOS.init();
   return (
-    <div className="hero__container">
-      <Mobile_menu />
+    <div className="hero__container" id="home">
+      <MobileMenu />
       <Cart />
       <div className="hero__content ">
         <div className="hero__menu">
-          <div className="hero__menu__logo ml2">
+          <a href="#home" className="hero__menu__logo ml2">
             <img src={logo} alt="LOGO" />
-          </div>
+          </a>
           <div className="hero__menu__icons"></div>
         </div>
         <div className="hero__upper ">
           <h2 className="hero__upper__text" id="margin">
             Start your day with a cup of tea
           </h2>
-          <button className="ml2">Get a cup</button>
+          <a href="#shop">
+            <button className="ml2">Get a cup</button>
+          </a>
         </div>
-        <div className="hero__lower">
+        <div className="hero__lower" id="explore">
           <h2 className="hero__lower__text ml2 mr2">
             Nutritional facts Per 100 grams
           </h2>
