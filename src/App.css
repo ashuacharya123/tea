@@ -9,6 +9,34 @@
   scroll-behavior: smooth;
 }
 
+#trigger::before {
+  opacity: 0;
+  -webkit-animation: trigger 3s;
+          animation: trigger 3s;
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: red;
+  border-radius: 50%;
+  right: 0.5rem;
+  top: 50%;
+}
+
+.trigger::before {
+  opacity: 0;
+  -webkit-animation: trigger2 3s;
+          animation: trigger2 3s;
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: red;
+  border-radius: 50%;
+  right: 0.5rem;
+  top: 50%;
+}
+
 .ml2 {
   margin-left: 2.5rem;
 }
@@ -849,6 +877,98 @@ body {
     opacity: 1;
     -webkit-transform: translateY(0rem);
             transform: translateY(0rem);
+  }
+}
+
+@-webkit-keyframes trigger {
+  0% {
+    top: 50%;
+    opacity: 0.4;
+  }
+  25% {
+    top: 0;
+    opacity: 0.6;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  75% {
+    top: -100%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes trigger {
+  0% {
+    top: 50%;
+    opacity: 0.4;
+  }
+  25% {
+    top: 0;
+    opacity: 0.6;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  75% {
+    top: -100%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes trigger2 {
+  0% {
+    top: 50%;
+    opacity: 0.4;
+  }
+  25% {
+    top: 0;
+    opacity: 0.6;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  75% {
+    top: -100%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes trigger2 {
+  0% {
+    top: 50%;
+    opacity: 0.4;
+  }
+  25% {
+    top: 0;
+    opacity: 0.6;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  75% {
+    top: -100%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=App.css.map */

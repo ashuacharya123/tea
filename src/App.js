@@ -5,16 +5,22 @@ import HealthBenifits from "./components/healthBenifits";
 import Shop from "./components/shop";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+import { useContext, useState } from "react";
+import { cartContext } from "./helper/context";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
   return (
     <div className="App ">
-      <Hero />
-      <Details />
-      <HealthBenifits />
-      <Shop />
-      <Contact />
-      <Footer />
+      <cartContext.Provider value={{ cart, setCart }}>
+        <Hero />
+        <Details />
+        <HealthBenifits />
+        <Shop />
+        <Contact />
+        <Footer />
+      </cartContext.Provider>
     </div>
   );
 }

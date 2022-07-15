@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import home from "../Assets/icons/home.svg";
 import explore from "../Assets/icons/explore.svg";
 import shop from "../Assets/icons/shop.svg";
 import contact from "../Assets/icons/contact.svg";
-import cart from "../Assets/icons/cart.svg";
+import cartIcon from "../Assets/icons/cart.svg";
+import { cartContext } from "../helper/context";
 
 const Mobile_menu = () => {
   const [move, setMove] = useState();
   document.addEventListener("scroll", () => {
     setMove(window.scrollY);
   });
-  console.log(move);
+
+  const [trigger, setTrigger] = useState(0);
+
+  const { cart, setCart } = useContext(cartContext);
+
+  useEffect(() => {
+    setTrigger(trigger + 1);
+  }, [cart.length]);
+
   return (
     <div className="hero__mobile__menu ">
       <a href="#home">
@@ -30,8 +39,12 @@ const Mobile_menu = () => {
 
         <span>Explore</span>
       </a>
-      <a href="/">
-        <img src={cart} alt="Cart" />
+      <a
+        href="/"
+        id={trigger % 2 === 0 ? "trigger" : ""}
+        className={trigger % 2 !== 0 ? "trigger" : ""}
+      >
+        <img src={cartIcon} alt="Cart" />
       </a>
       <a href="#shop">
         <div className={(move > 3040) & (move < 5725) ? "active" : ""}>
