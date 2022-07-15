@@ -15,7 +15,6 @@ function App() {
       <Shop />
       <Contact />
       <Footer />
-      <HealthBenifits />
     </div>
   );
 }
