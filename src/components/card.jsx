@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
+import AOS from "aos";
 import tea from "../Assets/teabag.png";
 import tea2 from "../Assets/teabag2.png";
 import { cartContext } from "../helper/context";
 
 const Card = (props) => {
+  AOS.init();
+
   const image = props.props[0] % 2 === 1 ? tea2 : tea;
   const price = props.props[1];
   const cutPrice = props.props[2];

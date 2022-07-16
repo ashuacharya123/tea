@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import home from "../Assets/icons/home.svg";
 import explore from "../Assets/icons/explore.svg";
 import shop from "../Assets/icons/shop.svg";

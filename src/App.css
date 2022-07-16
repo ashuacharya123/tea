@@ -161,7 +161,6 @@ body {
 
 .hero__upper {
   background-image: url(./Assets/mobile/Mobile_hero_background.png);
-  background-attachment: fixed;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -362,7 +361,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
-  background-attachment: fixed;
 }
 
 .health__container__content__text {

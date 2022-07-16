@@ -151,7 +151,7 @@ body {
   }
   &__upper {
     background-image: url(./Assets/mobile/Mobile_hero_background.png);
-    background-attachment: fixed;
+    // background-attachment: fixed;
 
     // background-position-x: -1.5rem;
     // background-repeat: no-repeat;
@@ -339,7 +339,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
-    background-attachment: fixed;
+    // background-attachment: fixed;
 
     &__text {
       padding-top: 5rem;
