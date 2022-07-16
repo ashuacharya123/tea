@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import home from "../Assets/icons/home.svg";
 import explore from "../Assets/icons/explore.svg";
 import shop from "../Assets/icons/shop.svg";
@@ -15,6 +15,11 @@ const Mobile_menu = () => {
   const [trigger, setTrigger] = useState(0);
 
   const { cart, setCart } = useContext(cartContext);
+
+  let quantity = null;
+  if (cart.length > 0) {
+    quantity = cart[cart.length - 1][0].totalQuantity;
+  }
 
   useEffect(() => {
     setTrigger(trigger + 1);
@@ -44,6 +49,7 @@ const Mobile_menu = () => {
         id={trigger % 2 === 0 ? "trigger" : ""}
         className={trigger % 2 !== 0 ? "trigger" : ""}
       >
+        <span type="quantity">{quantity}</span>
         <img src={cartIcon} alt="Cart" />
       </a>
       <a href="#shop">

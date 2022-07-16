@@ -11,10 +11,15 @@ const Card = (props) => {
   const name = props.props[4];
   const quantity = 1;
   const trigger = true;
+  let totalQuantity = 1;
 
   const { cart, setCart } = useContext(cartContext);
 
   const updateCart = () => {
+    for (let i = 0; i < cart.length; i++) {
+      totalQuantity += cart[i][0].quantity;
+    }
+
     for (let i = 0; i < cart.length; i++) {
       if (
         cart[i][0].image === image &&
@@ -24,17 +29,33 @@ const Card = (props) => {
         cart[i][0].name === name
       ) {
         cart[i][0].quantity++;
+        if (cart[cart.length - 1][0].price === undefined) {
+          cart[cart.length - 1].pop();
+          cart.pop();
+        }
+        setCart([...cart, [{ totalQuantity, quantity: 0 }]]);
+
         return;
       }
     }
     setCart([
       ...cart,
-      [{ image, price, cutPrice, discount, name, quantity, trigger }],
+      [
+        {
+          image,
+          price,
+          cutPrice,
+          discount,
+          name,
+          quantity,
+          trigger,
+          totalQuantity,
+        },
+      ],
     ]);
   };
+  console.log(cart);
 
-  // console.log(cart);
-  // console.log(cart[1][0]);
   return (
     <div className="shop__container__content">
       <div

@@ -110,6 +110,13 @@ body {
       text-decoration: none;
       color: black;
 
+      span[type="quantity"] {
+        position: absolute;
+        right: -1rem;
+        top: -80%;
+        font-size: 1.5rem;
+      }
+
       div {
         text-align: center;
       }
