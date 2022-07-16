@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import health from "../Assets/icons/Heathbenifits.svg";
 
 const HealthBenifits = () => {
+  const [move, setMove] = useState(); //[44,54,64,74]
+  document.addEventListener("scroll", () => {
+    const maxHeight = document.body.scrollHeight - window.innerHeight;
+    setMove((window.pageYOffset * 100) / maxHeight);
+  });
+
+  const yOffset = 33;
   return (
     <div className="health__container">
       <div className="health__container__content">
@@ -10,14 +17,7 @@ const HealthBenifits = () => {
         </div>
         <div
           className="health__container__content__health"
-          data-aos="fade-right"
-          // data-aos-offset="200"
-          data-aos-delay="10"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          data-aos-anchor-placement="top-center"
+          id={move > yOffset ? "card__animation" : ""}
         >
           <img src={health} alt="Health Benifits" />
         </div>

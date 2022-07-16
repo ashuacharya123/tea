@@ -14,6 +14,11 @@ $green: #5e905d;
   scroll-behavior: smooth;
 }
 
+#card__animation {
+  animation: mobileMenuAnimation 1s;
+  animation-fill-mode: forwards;
+}
+
 #trigger {
   &::before {
     opacity: 0;
@@ -338,7 +343,7 @@ body {
     background-image: url(./Assets/mobile/Mobile_health_benifits.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode: multiply;
+
     // background-attachment: fixed;
 
     &__text {
@@ -349,6 +354,7 @@ body {
     }
 
     &__health {
+      opacity: 0;
       margin-left: 3rem;
       height: 70%;
       img {
@@ -391,6 +397,7 @@ body {
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='2' stroke-dasharray='60%2c 70' stroke-dashoffset='34' stroke-linecap='square'/%3e%3c/svg%3e");
     border: 0.1px dashed black;
     &__card__container {
+      opacity: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;

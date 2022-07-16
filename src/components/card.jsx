@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AOS from "aos";
 import tea from "../Assets/teabag.png";
 import tea2 from "../Assets/teabag2.png";
@@ -6,6 +6,24 @@ import { cartContext } from "../helper/context";
 
 const Card = (props) => {
   AOS.init();
+
+  const [move, setMove] = useState(); //[44,54,64,74]
+  document.addEventListener("scroll", () => {
+    const maxHeight = document.body.scrollHeight - window.innerHeight;
+    setMove((window.pageYOffset * 100) / maxHeight);
+  });
+
+  // console.log(props.props[0]);
+  const yOffset =
+    props.props[0] === 0
+      ? 40
+      : props.props[0] === 1
+      ? 50
+      : props.props[0] === 2
+      ? 60
+      : props.props[0] === 3
+      ? 70
+      : 200;
 
   const image = props.props[0] % 2 === 1 ? tea2 : tea;
   const price = props.props[1];
@@ -57,19 +75,13 @@ const Card = (props) => {
       ],
     ]);
   };
-  console.log(cart);
+  // console.log(cart);
 
   return (
     <div className="shop__container__content">
       <div
         className="shop__container__content__card__container"
-        data-aos="zoom-in"
-        data-aos-delay="1"
-        data-aos-duration="800"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top-center"
+        id={move > yOffset ? "card__animation" : ""}
       >
         <div className="shop__container__content__card__container__card__image">
           <img src={image} alt="tea" />

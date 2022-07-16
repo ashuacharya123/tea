@@ -9,6 +9,13 @@
   scroll-behavior: smooth;
 }
 
+#card__animation {
+  -webkit-animation: mobileMenuAnimation 1s;
+          animation: mobileMenuAnimation 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 #trigger::before {
   opacity: 0;
   -webkit-animation: trigger 3s;
@@ -360,7 +367,6 @@ body {
   background-image: url(./Assets/mobile/Mobile_health_benifits.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-blend-mode: multiply;
 }
 
 .health__container__content__text {
@@ -371,6 +377,7 @@ body {
 }
 
 .health__container__content__health {
+  opacity: 0;
   margin-left: 3rem;
   height: 70%;
 }
@@ -425,6 +432,7 @@ body {
 }
 
 .shop__container__content__card__container {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

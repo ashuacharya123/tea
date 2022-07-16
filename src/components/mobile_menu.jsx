@@ -9,7 +9,8 @@ import { cartContext } from "../helper/context";
 const Mobile_menu = () => {
   const [move, setMove] = useState();
   document.addEventListener("scroll", () => {
-    setMove(window.scrollY);
+    const maxHeight = document.body.scrollHeight - window.innerHeight;
+    setMove((window.pageYOffset * 100) / maxHeight);
   });
 
   const [trigger, setTrigger] = useState(0);
@@ -28,7 +29,7 @@ const Mobile_menu = () => {
   return (
     <div className="hero__mobile__menu ">
       <a href="#home">
-        <div className={move < 780 || move === undefined ? "active" : ""}>
+        <div className={move < 12 || move === undefined ? "active" : ""}>
           <img src={home} alt="" />
         </div>
 
@@ -36,7 +37,7 @@ const Mobile_menu = () => {
       </a>
       <a href="#explore">
         <div
-          className={(move > 780) & (move < 3040) ? "active" : ""}
+          className={(move > 12) & (move < 45) ? "active" : ""}
           type="explore"
         >
           <img src={explore} alt="" />
@@ -53,14 +54,14 @@ const Mobile_menu = () => {
         <img src={cartIcon} alt="Cart" />
       </a>
       <a href="#shop">
-        <div className={(move > 3040) & (move < 5725) ? "active" : ""}>
+        <div className={(move > 45) & (move < 85) ? "active" : ""}>
           <img src={shop} alt="" />
         </div>
 
         <span>Shop</span>
       </a>
       <a href="#contact">
-        <div className={move > 5725 ? "active" : ""} type="contact">
+        <div className={move > 85 ? "active" : ""} type="contact">
           <img src={contact} alt="" />
         </div>
         <span>Contact us</span>
