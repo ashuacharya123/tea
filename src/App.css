@@ -269,6 +269,10 @@ body {
       justify-content: space-around;
 }
 
+.hero__lower ul div[type="animation"] {
+  opacity: 0;
+}
+
 .hero__lower ul li {
   list-style: none;
   display: -webkit-box;

@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
-import AOS from "aos";
+
 import tea from "../Assets/teabag.png";
 import tea2 from "../Assets/teabag2.png";
 import { cartContext } from "../helper/context";
 
 const Card = (props) => {
-  AOS.init();
-
   const [move, setMove] = useState(); //[44,54,64,74]
   document.addEventListener("scroll", () => {
     const maxHeight = document.body.scrollHeight - window.innerHeight;

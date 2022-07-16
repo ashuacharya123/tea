@@ -1,12 +1,17 @@
-import React from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { useState } from "react";
+
 import logo from "../Assets/icons/LOGO.svg";
 import MobileMenu from "./mobile_menu";
 import Cart from "./cart";
 
 const Hero = () => {
-  AOS.init();
+  const [move, setMove] = useState();
+  document.addEventListener("scroll", () => {
+    const maxHeight = document.body.scrollHeight - window.innerHeight;
+    setMove((window.pageYOffset * 100) / maxHeight);
+  });
+
+  const yOffset = 10;
   return (
     <div className="hero__container" id="home">
       <MobileMenu />
@@ -31,16 +36,7 @@ const Hero = () => {
             Nutritional facts Per 100 grams
           </h2>
           <ul className="ml2 mr2">
-            <div
-              data-aos="fade-up"
-              // data-aos-offset="200"
-              data-aos-delay="10"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out"
-              data-aos-mirror="true"
-              data-aos-once="false"
-              data-aos-anchor-placement="top-center"
-            >
+            <div id={move > yOffset ? "card__animation" : ""} type="animation">
               <li>
                 <div num="1">37</div>
                 <span>Calories</span>
@@ -54,16 +50,7 @@ const Hero = () => {
                 <span>Protein</span>
               </li>
             </div>
-            <div
-              data-aos="fade-up"
-              // data-aos-offset="200"
-              data-aos-delay="10"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out"
-              data-aos-mirror="true"
-              data-aos-once="false"
-              data-aos-anchor-placement="top-center"
-            >
+            <div id={move > yOffset ? "card__animation" : ""} type="animation">
               <li>
                 <div className="">0.7g</div>
                 <span>Total Fat</span>

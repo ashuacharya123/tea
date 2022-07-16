@@ -1,10 +1,8 @@
 import React from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import garden from "../Assets/mobile/Mobile_Mask Group.png";
 
 const Details = () => {
-  AOS.init();
   return (
     <div className="details__container">
       <div className="details__container__content">
