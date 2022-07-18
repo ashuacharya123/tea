@@ -9,3 +9,5 @@ export const cartContext = createContext([
     4: 4,
   },
 ]);
+
+export const showCart = createContext(false);

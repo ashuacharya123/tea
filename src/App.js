@@ -5,16 +5,21 @@ import HealthBenifits from "./components/healthBenifits";
 import Shop from "./components/shop";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
-import { useContext, useState } from "react";
-import { cartContext } from "./helper/context";
+import Cart from "./components/cart";
+import { useState } from "react";
+import { cartContext, showCart } from "./helper/context";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [cartShow, setCartShow] = useState(false);
 
   return (
     <div className="App ">
       <cartContext.Provider value={{ cart, setCart }}>
-        <Hero />
+        <showCart.Provider value={{ cartShow, setCartShow }}>
+          <Cart />
+          <Hero />
+        </showCart.Provider>
         <Details />
         <HealthBenifits />
         <Shop />

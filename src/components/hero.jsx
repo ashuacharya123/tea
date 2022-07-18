@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import logo from "../Assets/icons/LOGO.svg";
 import MobileMenu from "./mobile_menu";
-import Cart from "./cart";
 
 const Hero = () => {
   const [move, setMove] = useState();
@@ -15,7 +14,7 @@ const Hero = () => {
   return (
     <div className="hero__container" id="home">
       <MobileMenu />
-      <Cart />
+
       <div className="hero__content ">
         <div className="hero__menu">
           <a href="#home" className="hero__menu__logo ml2">
