@@ -11,3 +11,5 @@ export const cartContext = createContext([
 ]);
 
 export const showCart = createContext(false);
+
+export const buy = createContext([{}]);

@@ -3,6 +3,10 @@
   display: none;
 }
 
+.dn {
+  display: none;
+}
+
 *,
 *::after,
 *::before {

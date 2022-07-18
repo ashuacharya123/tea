@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 
 import tea from "../Assets/teabag.png";
 import tea2 from "../Assets/teabag2.png";
-import { cartContext } from "../helper/context";
+import { cartContext, buy } from "../helper/context";
 
 const Card = (props) => {
   const [move, setMove] = useState(); //[44,54,64,74]
@@ -34,6 +34,11 @@ const Card = (props) => {
   const delivery = 0;
 
   const { cart, setCart } = useContext(cartContext);
+  const { buyNow, setBuyNow } = useContext(buy);
+
+  const buyNowFunction = (name, quantity, price) => {
+    setBuyNow([name, quantity, price]);
+  };
 
   const updateCart = () => {
     for (let i = 0; i < cart.length; i++) {
@@ -100,7 +105,13 @@ const Card = (props) => {
             >
               Add to cart
             </button>
-            <button>Buy now</button>
+            <button
+              onClick={(e) => {
+                buyNowFunction(name, quantity, price);
+              }}
+            >
+              Buy now
+            </button>
           </span>
         </div>
       </div>

@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
-import { cartContext, showCart } from "../helper/context";
+import { cartContext, showCart, buy } from "../helper/context";
 import close from "../Assets/icons/close.svg";
 import deleteIcon from "../Assets/icons/delete.svg";
 
 const Cart = () => {
   const { cart, setCart } = useContext(cartContext);
   const { cartShow, setCartShow } = useContext(showCart);
+  const { buyNow, setBuyNow } = useContext(buy);
+  console.log(buyNow[0]);
 
   const [checkout, setCheckout] = useState(false);
   // console.log(cart);
@@ -42,16 +44,6 @@ const Cart = () => {
     }
   };
 
-  // let hi = [];
-  // let checkoutNames = [];
-  // let checkoutQuantity = [];
-  // const checkoutFunction = (name, quantity) => {
-  //   checkoutNames = [...checkoutNames, name];
-  //   checkoutQuantity = [...checkoutQuantity, quantity];
-  //   hi = checkoutNames;
-  //   console.log(checkoutNames, checkoutQuantity, hi);
-  // };
-
   const deleteItem = (image, price, cutPrice, discount, name) => {
     for (let i = 0; i < cart.length; i++) {
       if (cart[i][0].quantity === 0) continue;
@@ -82,9 +74,13 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart__container" id={cartShow ? "cartShow" : ""}>
+    <div
+      className="cart__container"
+      id={cartShow || buyNow.length > 0 ? "cartShow" : ""}
+    >
       <div
         className="cart__container__close"
+        id={buyNow.length > 0 ? "dn" : ""}
         onClick={() => {
           setCartShow(false);
         }}
@@ -94,7 +90,10 @@ const Cart = () => {
         </div>
         <span>Close</span>
       </div>
-      <div className="cart__container__container" id={checkout ? "dn" : ""}>
+      <div
+        className="cart__container__container"
+        id={checkout || buyNow.length > 0 ? "dn" : ""}
+      >
         {data.length !== 0 ? (
           data.map((d) => {
             return (
@@ -162,6 +161,7 @@ const Cart = () => {
                 </div>
                 <button
                   id="btn"
+                  className="dn"
                   onClick={() => {
                     setCheckout(true);
                   }}
@@ -178,7 +178,7 @@ const Cart = () => {
 
       <div
         className="checkout cart__container__content__lower"
-        id={checkout ? "" : "dn"}
+        id={checkout || buyNow.length > 0 ? "" : "dn"}
       >
         <span>
           <h6>Order Details</h6>
@@ -188,19 +188,25 @@ const Cart = () => {
           return (
             <>
               <span>
-                <h6>{d.name}</h6>
-                <h6>X{d.quantity}</h6>
+                <h6>{buyNow.length > 0 ? buyNow[0] : d.name}</h6>
+                <h6>X{buyNow.length > 0 ? buyNow[1] : d.quantity}</h6>
               </span>
             </>
           );
         })}
+        <span>
+          <h6>{buyNow.length > 0 ? buyNow[0] : ""}</h6>
+          <h6>X{buyNow.length > 0 ? buyNow[1] : ""}</h6>
+        </span>
       </div>
 
       <div className="cart__container__content__lower">
         <hr />
         <span>
           <h6>Total</h6>
-          <h5>${totalPrice ? totalPrice : "0.00"}</h5>
+          <h5>
+            ${buyNow.length > 0 ? buyNow[2] : totalPrice ? totalPrice : "0.00"}
+          </h5>
         </span>
         <span>
           <h6>Delivery</h6>
@@ -208,13 +214,16 @@ const Cart = () => {
         </span>
         <span>
           <h6>Sub-Total</h6>
-          <h5>${totalPrice ? totalPrice : "0.00"}</h5>
+          <h5>
+            ${buyNow.length > 0 ? buyNow[2] : totalPrice ? totalPrice : "0.00"}
+          </h5>
         </span>
         <span>
           <button
             onClick={() => {
               setCartShow(false);
               setCheckout(false);
+              setBuyNow([]);
             }}
           >
             Cancel
