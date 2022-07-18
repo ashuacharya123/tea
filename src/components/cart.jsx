@@ -1,24 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { cartContext, showCart } from "../helper/context";
 import close from "../Assets/icons/close.svg";
+import deleteIcon from "../Assets/icons/delete.svg";
 
 const Cart = () => {
   const { cart, setCart } = useContext(cartContext);
   const { cartShow, setCartShow } = useContext(showCart);
+
+  const [checkout, setCheckout] = useState(false);
   // console.log(cart);
 
   let totalPrice = null;
+
   let data = [];
   for (let i = 0; i < cart.length; i++) {
     if (cart[i][0].quantity === 0) continue;
     data = [...data, cart[i][0]];
     totalPrice += cart[i][0].price * cart[i][0].quantity;
   }
-  let quantity = null;
-  if (cart.length > 0) {
-    quantity = cart[cart.length - 1][0].totalQuantity;
-  }
-  // console.log(cart);
 
   const itemQuantity = (sign, image, price, cutPrice, discount, name) => {
     for (let i = 0; i < cart.length; i++) {
@@ -42,6 +41,16 @@ const Cart = () => {
       }
     }
   };
+
+  // let hi = [];
+  // let checkoutNames = [];
+  // let checkoutQuantity = [];
+  // const checkoutFunction = (name, quantity) => {
+  //   checkoutNames = [...checkoutNames, name];
+  //   checkoutQuantity = [...checkoutQuantity, quantity];
+  //   hi = checkoutNames;
+  //   console.log(checkoutNames, checkoutQuantity, hi);
+  // };
 
   const deleteItem = (image, price, cutPrice, discount, name) => {
     for (let i = 0; i < cart.length; i++) {
@@ -85,77 +94,136 @@ const Cart = () => {
         </div>
         <span>Close</span>
       </div>
-      {data.length !== 0 ? (
-        data.map((d) => {
+      <div className="cart__container__container" id={checkout ? "dn" : ""}>
+        {data.length !== 0 ? (
+          data.map((d) => {
+            return (
+              <>
+                <div className="cart__container__content">
+                  <div className="cart__container__content__upper">
+                    <div className="cart__container__content__upper__image">
+                      <img src={d.image} alt="" />
+                    </div>
+                    <div className="cart__container__content__upper__details">
+                      <span>
+                        {d.price} <li>{d.cutPrice}</li>
+                        <button>{d.discount}% off</button>
+                      </span>
+                      <h6>{d.name}</h6>
+                      <span>
+                        <button
+                          onClick={(e) => {
+                            itemQuantity(
+                              "-",
+                              d.image,
+                              d.price,
+                              d.cutPrice,
+                              d.discount,
+                              d.name
+                            );
+                          }}
+                        >
+                          -
+                        </button>
+                        <h5>{d.quantity}</h5>
+                        <button
+                          onClick={(e) => {
+                            itemQuantity(
+                              "+",
+                              d.image,
+                              d.price,
+                              d.cutPrice,
+                              d.discount,
+                              d.name
+                            );
+                          }}
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            deleteItem(
+                              d.image,
+                              d.price,
+                              d.cutPrice,
+                              d.discount,
+                              d.name
+                            );
+                          }}
+                        >
+                          <div className="image__container">
+                            <img src={deleteIcon} alt="delete icon" />
+                          </div>
+                          <span>Delete</span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  id="btn"
+                  onClick={() => {
+                    setCheckout(true);
+                  }}
+                ></button>
+              </>
+            );
+          })
+        ) : (
+          <>
+            <h2 className="cart__container__empty">Empty Cart</h2>
+          </>
+        )}
+      </div>
+
+      <div
+        className="checkout cart__container__content__lower"
+        id={checkout ? "" : "dn"}
+      >
+        <span>
+          <h6>Order Details</h6>
+          <h6>Quantity</h6>
+        </span>
+        {data.map((d) => {
           return (
             <>
-              <div className="cart__container__content">
-                <div className="cart__container__content__upper">
-                  <div className="cart__container__content__upper__image">
-                    <img src={d.image} alt="" />
-                  </div>
-                  <div className="cart__container__content__upper__details">
-                    <span>
-                      {d.price} <li>{d.cutPrice}</li>
-                      <button>{d.discount}% off</button>
-                    </span>
-                    <span>
-                      <h6>{d.name}</h6>
-                      <button
-                        onClick={(e) => {
-                          itemQuantity(
-                            "+",
-                            d.image,
-                            d.price,
-                            d.cutPrice,
-                            d.discount,
-                            d.name
-                          );
-                        }}
-                      >
-                        +
-                      </button>
-                      <h5>{d.quantity}</h5>
-                      <button
-                        onClick={(e) => {
-                          itemQuantity(
-                            "-",
-                            d.image,
-                            d.price,
-                            d.cutPrice,
-                            d.discount,
-                            d.name
-                          );
-                        }}
-                      >
-                        -
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          deleteItem(
-                            d.image,
-                            d.price,
-                            d.cutPrice,
-                            d.discount,
-                            d.name
-                          );
-                        }}
-                      >
-                        Delete
-                      </button>
-                    </span>
-                  </div>
-                </div>
-                <div className="cart__container__content__lower">
-                  {totalPrice}
-                </div>
-              </div>
+              <span>
+                <h6>{d.name}</h6>
+                <h6>X{d.quantity}</h6>
+              </span>
             </>
           );
-        })
-      ) : (
-        <h2>Empty Cart</h2>
-      )}
+        })}
+      </div>
+
+      <div className="cart__container__content__lower">
+        <hr />
+        <span>
+          <h6>Total</h6>
+          <h5>${totalPrice ? totalPrice : "0.00"}</h5>
+        </span>
+        <span>
+          <h6>Delivery</h6>
+          <h5>$0.00</h5>
+        </span>
+        <span>
+          <h6>Sub-Total</h6>
+          <h5>${totalPrice ? totalPrice : "0.00"}</h5>
+        </span>
+        <span>
+          <button
+            onClick={() => {
+              setCartShow(false);
+              setCheckout(false);
+            }}
+          >
+            Cancel
+          </button>
+          <button>
+            <label htmlFor="btn">{checkout ? "Order Now" : "Checkout"}</label>
+          </button>
+        </span>
+      </div>
     </div>
   );
 };

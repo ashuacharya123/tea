@@ -31,6 +31,7 @@ const Card = (props) => {
   const quantity = 1;
   const trigger = true;
   let totalQuantity = 1;
+  const delivery = 0;
 
   const { cart, setCart } = useContext(cartContext);
 
@@ -69,6 +70,7 @@ const Card = (props) => {
           quantity,
           trigger,
           totalQuantity,
+          delivery,
         },
       ],
     ]);
