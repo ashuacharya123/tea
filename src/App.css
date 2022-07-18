@@ -184,6 +184,18 @@ body {
   padding-top: 4.5rem;
 }
 
+.hero__upper a {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.hero__upper a:hover, .hero__upper a:active, .hero__upper a:focus {
+  -webkit-animation: clipPath 1s ease;
+          animation: clipPath 1s ease;
+}
+
 .hero__upper button {
   -webkit-animation: loading2 2s;
           animation: loading2 2s;
@@ -443,11 +455,15 @@ body {
 .shop__container__content {
   margin-bottom: 6rem;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='20%2c 20' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
-.shop__container__content:hover {
-  -webkit-box-shadow: 0rem 1rem 4rem 0.5rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0rem 1rem 4rem 0.5rem rgba(0, 0, 0, 0.2);
+.shop__container__content:hover, .shop__container__content:active, .shop__container__content:focus {
+  -webkit-box-shadow: 0rem 0rem 15rem -5.5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0rem 0rem 15rem -5.5rem rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 
 .shop__container__content__card__container {
@@ -551,6 +567,15 @@ body {
   width: 100%;
   padding: 1.2rem 0 1.2rem 0;
   border-radius: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.shop__container__content__card__container__card__details span:nth-of-type(2) button:hover, .shop__container__content__card__container__card__details span:nth-of-type(2) button:active, .shop__container__content__card__container__card__details span:nth-of-type(2) button:focus {
+  -webkit-animation: clipPath 1s ease;
+          animation: clipPath 1s ease;
 }
 
 .shop__container__content__card__container__card__details span:nth-of-type(2) button:nth-of-type(1) {
@@ -666,6 +691,15 @@ body {
   border: none;
   padding: 1.5rem 0 1.5rem 0;
   border-radius: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.contact__content__form__upper button:hover, .contact__content__form__upper button:active, .contact__content__form__upper button:focus {
+  -webkit-animation: clipPath 1s ease;
+          animation: clipPath 1s ease;
 }
 
 .contact__content__form__lower__text {
@@ -784,6 +818,15 @@ body {
   padding: 1rem 0 1rem 0;
   border-radius: 1rem;
   margin-bottom: 15rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.footer__content__lower button:hover, .footer__content__lower button:active, .footer__content__lower button:focus {
+  -webkit-animation: clipPath 1s ease;
+          animation: clipPath 1s ease;
 }
 
 #cartShow {
@@ -970,7 +1013,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: transparent;
-  color: #bf4b4b;
+  color: #c76868;
   border: none;
 }
 
@@ -1237,6 +1280,36 @@ body {
   100% {
     top: 50%;
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes clipPath {
+  0% {
+    -webkit-clip-path: circle(100%);
+            clip-path: circle(100%);
+  }
+  50% {
+    -webkit-clip-path: circle(32%);
+            clip-path: circle(32%);
+  }
+  100% {
+    -webkit-clip-path: circle(100%);
+            clip-path: circle(100%);
+  }
+}
+
+@keyframes clipPath {
+  0% {
+    -webkit-clip-path: circle(100%);
+            clip-path: circle(100%);
+  }
+  50% {
+    -webkit-clip-path: circle(32%);
+            clip-path: circle(32%);
+  }
+  100% {
+    -webkit-clip-path: circle(100%);
+            clip-path: circle(100%);
   }
 }
 /*# sourceMappingURL=App.css.map */

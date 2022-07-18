@@ -172,6 +172,16 @@ body {
     height: 100vh;
     width: 100vw;
     padding-top: 4.5rem;
+    a {
+      transition: all 0.2s;
+      backface-visibility: hidden;
+
+      &:hover,
+      &:active,
+      &:focus {
+        animation: clipPath 1s ease;
+      }
+    }
 
     button {
       animation: loading2 2s;
@@ -405,9 +415,13 @@ body {
     margin-bottom: 6rem;
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='4' stroke-dasharray='20%2c 20' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
     // border: 0.1px dashed black;
+    transition: all 0.2s;
 
-    &:hover {
-      box-shadow: 0rem 1rem 4rem 0.5rem rgba(0, 0, 0, 0.2);
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 0rem 0rem 15rem -5.5rem rgba(black, 0.2);
+      transform: scale(1.01);
     }
     &__card__container {
       opacity: 0;
@@ -478,6 +492,14 @@ body {
               width: 100%;
               padding: 1.2rem 0 1.2rem 0;
               border-radius: 1rem;
+              transition: all 0.2s;
+              backface-visibility: hidden;
+
+              &:hover,
+              &:active,
+              &:focus {
+                animation: clipPath 1s ease;
+              }
 
               &:nth-of-type(1) {
                 background-color: transparent;
@@ -584,6 +606,14 @@ body {
         border: none;
         padding: 1.5rem 0 1.5rem 0;
         border-radius: 1rem;
+        transition: all 0.2s;
+        backface-visibility: hidden;
+
+        &:hover,
+        &:active,
+        &:focus {
+          animation: clipPath 1s ease;
+        }
       }
     }
     &__lower {
@@ -608,7 +638,7 @@ body {
   }
 }
 
-// todo : Contact Section
+// todo : Footer Section
 
 .footer__container {
   margin-top: 6rem;
@@ -698,6 +728,14 @@ body {
       padding: 1rem 0 1rem 0;
       border-radius: 1rem;
       margin-bottom: 15rem;
+      transition: all 0.2s;
+      backface-visibility: hidden;
+
+      &:hover,
+      &:active,
+      &:focus {
+        animation: clipPath 1s ease;
+      }
     }
   }
 }
@@ -839,7 +877,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 background-color: transparent;
-                color: #bf4b4b;
+                color: #c76868;
                 border: none;
                 span {
                   font-size: 1rem;
@@ -992,5 +1030,18 @@ body {
   100% {
     top: 50%;
     opacity: 1;
+  }
+}
+
+@keyframes clipPath {
+  0% {
+    clip-path: circle(100%);
+  }
+
+  50% {
+    clip-path: circle(32%);
+  }
+  100% {
+    clip-path: circle(100%);
   }
 }
