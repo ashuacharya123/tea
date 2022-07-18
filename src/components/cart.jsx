@@ -187,14 +187,14 @@ const Cart = () => {
         {data.map((d) => {
           return (
             <>
-              <span>
+              <span id={buyNow.length > 0 ? "dn" : ""}>
                 <h6>{buyNow.length > 0 ? buyNow[0] : d.name}</h6>
                 <h6>X{buyNow.length > 0 ? buyNow[1] : d.quantity}</h6>
               </span>
             </>
           );
         })}
-        <span>
+        <span id={buyNow.length > 0 ? "" : "dn"}>
           <h6>{buyNow.length > 0 ? buyNow[0] : ""}</h6>
           <h6>X{buyNow.length > 0 ? buyNow[1] : ""}</h6>
         </span>
