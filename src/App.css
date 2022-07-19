@@ -1424,8 +1424,8 @@ body {
     margin-left: 10rem;
   }
   .hero__lower__text {
-    margin-left: 5rem;
-    width: 80%;
+    width: 75%;
+    margin-inline: auto;
   }
   .contact__container,
   .footer__container {
