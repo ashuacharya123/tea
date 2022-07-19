@@ -115,12 +115,24 @@ body {
       background: black;
       top: -1.8rem;
       left: -1rem;
+      @media screen and (max-width: 370px) {
+        top: -1.6rem;
+      }
+      @media screen and (max-width: 325px) {
+        top: -1.4rem;
+      }
     }
     a {
       display: flex;
       flex-direction: column;
       text-decoration: none;
       color: black;
+
+      @media screen and (max-width: 600px) {
+        &:nth-of-type(4) {
+          margin-left: 1rem;
+        }
+      }
 
       span[type="quantity"] {
         position: absolute;
@@ -312,6 +324,11 @@ body {
       font-size: 2.8rem;
       font-weight: 500;
       line-height: 4rem;
+
+      @media screen and (max-width: 330px) {
+        margin-bottom: 2rem;
+        margin-top: -3.5rem;
+      }
     }
     &__image {
       margin-top: -17rem;
@@ -333,20 +350,10 @@ body {
     }
     &__paragraph {
       margin-top: -10rem;
-      margin-bottom: 0rem;
+      margin-bottom: 3rem;
       line-height: 3.5rem;
       font-size: 1.8rem;
       font-weight: 300;
-
-      &::after {
-        content: " ";
-        display: block;
-        margin-top: 2rem;
-        background-image: url(./Assets/icons/Arrow1.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 10rem;
-      }
     }
   }
 }
@@ -370,6 +377,10 @@ body {
       padding-bottom: 3rem;
       opacity: 0.6;
       font-size: 3.5rem;
+
+      @media screen and (max-width: 382px) {
+        font-size: 3rem;
+      }
     }
 
     &__health {
@@ -431,6 +442,9 @@ body {
       align-items: center;
 
       &__card__image {
+        img {
+          width: 100%;
+        }
       }
       &__card__details {
         display: flex;
@@ -532,6 +546,9 @@ body {
     font-weight: 500;
     color: $green;
     padding-top: 3rem;
+    @media screen and (max-height: 775px) {
+      padding-bottom: 4rem;
+    }
   }
   &__form {
     flex: 80%;
@@ -544,6 +561,10 @@ body {
     color: $white;
     position: relative;
     margin: 1rem 0 1rem 0;
+
+    @media screen and (max-height: 775px) {
+      padding-bottom: 4rem;
+    }
 
     &::before,
     &::after {
@@ -662,6 +683,14 @@ body {
 }
 .footer__content {
   color: $white;
+
+  @media screen and (max-height: 658px) {
+    &__upper {
+      transform: scale(0.7);
+      margin-left: -3rem;
+    }
+  }
+
   &__middle {
     &__text {
       font-size: 2.5rem;
@@ -1043,5 +1072,68 @@ body {
   }
   100% {
     clip-path: circle(100%);
+  }
+}
+
+//todo: Media Queries
+
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 55%;
+  }
+  @media screen and (max-width: 325px) {
+    html {
+      font-size: 50%;
+    }
+  }
+  @media screen and (max-width: 312px) {
+    html {
+      font-size: 45%;
+    }
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .App {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+
+  .hero__upper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -12rem;
+
+    @media screen and (min-width: 690px) and (max-width: 710px) {
+      background-position-y: -15rem;
+    }
+    @media screen and (min-width: 710px) and (max-width: 756px) {
+      background-position-y: -20rem;
+    }
+  }
+
+  .hero__upper__text {
+    width: 75%;
+  }
+
+  .hero__upper button,
+  .hero__menu__logo,
+  .hero__upper__text {
+    margin-left: 10rem;
+  }
+
+  .hero__lower__text {
+    margin-left: 5rem;
+    width: 80%;
+  }
+
+  .contact__container,
+  .footer__container {
+    width: 100%;
   }
 }

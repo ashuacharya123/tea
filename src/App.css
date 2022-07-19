@@ -121,6 +121,18 @@ body {
   left: -1rem;
 }
 
+@media screen and (max-width: 370px) {
+  .hero__mobile__menu .active::before {
+    top: -1.6rem;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .hero__mobile__menu .active::before {
+    top: -1.4rem;
+  }
+}
+
 .hero__mobile__menu a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,6 +143,12 @@ body {
           flex-direction: column;
   text-decoration: none;
   color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .hero__mobile__menu a:nth-of-type(4) {
+    margin-left: 1rem;
+  }
 }
 
 .hero__mobile__menu a span[type="quantity"] {
@@ -343,6 +361,13 @@ body {
   line-height: 4rem;
 }
 
+@media screen and (max-width: 330px) {
+  .details__container__content__text {
+    margin-bottom: 2rem;
+    margin-top: -3.5rem;
+  }
+}
+
 .details__container__content__image {
   margin-top: -17rem;
   position: relative;
@@ -366,20 +391,10 @@ body {
 
 .details__container__content__paragraph {
   margin-top: -10rem;
-  margin-bottom: 0rem;
+  margin-bottom: 3rem;
   line-height: 3.5rem;
   font-size: 1.8rem;
   font-weight: 300;
-}
-
-.details__container__content__paragraph::after {
-  content: " ";
-  display: block;
-  margin-top: 2rem;
-  background-image: url(./Assets/icons/Arrow1.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 10rem;
 }
 
 .health__container {
@@ -401,6 +416,12 @@ body {
   padding-bottom: 3rem;
   opacity: 0.6;
   font-size: 3.5rem;
+}
+
+@media screen and (max-width: 382px) {
+  .health__container__content__text {
+    font-size: 3rem;
+  }
 }
 
 .health__container__content__health {
@@ -481,6 +502,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.shop__container__content__card__container__card__image img {
+  width: 100%;
 }
 
 .shop__container__content__card__container__card__details {
@@ -610,6 +635,12 @@ body {
   padding-top: 3rem;
 }
 
+@media screen and (max-height: 775px) {
+  .contact__content__text {
+    padding-bottom: 4rem;
+  }
+}
+
 .contact__content__form {
   -webkit-box-flex: 80%;
       -ms-flex: 80%;
@@ -628,6 +659,12 @@ body {
   color: #ffffff;
   position: relative;
   margin: 1rem 0 1rem 0;
+}
+
+@media screen and (max-height: 775px) {
+  .contact__content__form {
+    padding-bottom: 4rem;
+  }
 }
 
 .contact__content__form::before, .contact__content__form::after {
@@ -744,6 +781,14 @@ body {
 
 .footer__content {
   color: #ffffff;
+}
+
+@media screen and (max-height: 658px) {
+  .footer__content__upper {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    margin-left: -3rem;
+  }
 }
 
 .footer__content__middle__text {
@@ -1310,6 +1355,81 @@ body {
   100% {
     -webkit-clip-path: circle(100%);
             clip-path: circle(100%);
+  }
+}
+
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 370px) and (max-width: 325px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 370px) and (max-width: 312px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .App {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+  .hero__upper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -12rem;
+  }
+}
+
+@media screen and (min-width: 550px) and (min-width: 690px) and (max-width: 710px) {
+  .hero__upper {
+    background-position-y: -15rem;
+  }
+}
+
+@media screen and (min-width: 550px) and (min-width: 710px) and (max-width: 756px) {
+  .hero__upper {
+    background-position-y: -20rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .hero__upper__text {
+    width: 75%;
+  }
+  .hero__upper button,
+  .hero__menu__logo,
+  .hero__upper__text {
+    margin-left: 10rem;
+  }
+  .hero__lower__text {
+    margin-left: 5rem;
+    width: 80%;
+  }
+  .contact__container,
+  .footer__container {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=App.css.map */

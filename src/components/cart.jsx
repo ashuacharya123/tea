@@ -7,7 +7,7 @@ const Cart = () => {
   const { cart, setCart } = useContext(cartContext);
   const { cartShow, setCartShow } = useContext(showCart);
   const { buyNow, setBuyNow } = useContext(buy);
-  console.log(buyNow[0]);
+  // console.log(buyNow[0]);
 
   const [checkout, setCheckout] = useState(false);
   // console.log(cart);
