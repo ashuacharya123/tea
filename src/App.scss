@@ -332,6 +332,7 @@ body {
     }
     &__image {
       margin-top: -17rem;
+      // width: 100%;
       position: relative;
       &::before {
         content: "Our own garden";
@@ -344,7 +345,9 @@ body {
 
       img {
         margin-inline: auto;
-        width: 95%;
+        @media screen and (max-width: 756px) {
+          width: 95%;
+        }
         object-fit: cover;
       }
     }
@@ -1115,6 +1118,12 @@ body {
 
   .details__container {
     height: 110vh;
+    @media screen and (min-height: 850px) {
+      height: 98vh;
+    }
+    @media screen and (min-height: 900px) {
+      height: 95vh;
+    }
     &__content {
       display: flex;
       height: 100%;
@@ -1137,19 +1146,24 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        // width: 100%;
+        transform: scale(1.5);
+
+        @media screen and (min-width: 1500px) {
+          transform: scale(2);
+        }
 
         img {
-          background-size: contain;
+          background-size: cover;
         }
 
         &::before {
           content: "Our own garden";
           color: black;
           opacity: 0.5;
-          font-size: 2rem;
-          top: 92%;
-          left: 30%;
+          font-size: 1.5rem;
+          bottom: 92%;
+          left: 40%;
           position: absolute;
         }
       }

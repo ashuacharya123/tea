@@ -384,9 +384,14 @@ body {
 
 .details__container__content__image img {
   margin-inline: auto;
-  width: 95%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 756px) {
+  .details__container__content__image img {
+    width: 95%;
+  }
 }
 
 .details__container__content__paragraph {
@@ -1276,6 +1281,21 @@ body {
   .details__container {
     height: 110vh;
   }
+}
+
+@media screen and (min-width: 756px) and (min-height: 850px) {
+  .details__container {
+    height: 98vh;
+  }
+}
+
+@media screen and (min-width: 756px) and (min-height: 900px) {
+  .details__container {
+    height: 95vh;
+  }
+}
+
+@media screen and (min-width: 756px) {
   .details__container__content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1314,18 +1334,29 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
+}
+
+@media screen and (min-width: 756px) and (min-width: 1500px) {
+  .details__container__content__image {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@media screen and (min-width: 756px) {
   .details__container__content__image img {
-    background-size: contain;
+    background-size: cover;
   }
   .details__container__content__image::before {
     content: "Our own garden";
     color: black;
     opacity: 0.5;
-    font-size: 2rem;
-    top: 92%;
-    left: 30%;
+    font-size: 1.5rem;
+    bottom: 92%;
+    left: 40%;
     position: absolute;
   }
   .details__container__content__paragraph {
