@@ -1274,39 +1274,62 @@ body {
     margin-left: 6rem;
   }
   .details__container {
-    height: 100vh;
+    height: 110vh;
   }
   .details__container__content {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
   }
   .details__container__content__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 25rem;
     margin-left: 8rem;
     text-align: start;
     margin-top: 8rem;
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 5rem;
+    width: 100%;
   }
   .details__container__content__image {
-    -ms-grid-column: 2;
-    grid-area: 1/2 / span2;
-    margin-top: -30rem;
+    -webkit-box-flex: 70%;
+        -ms-flex: 70%;
+            flex: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .details__container__content__image img {
+    background-size: contain;
   }
   .details__container__content__image::before {
     content: "Our own garden";
     color: black;
     opacity: 0.5;
     font-size: 2rem;
-    top: 83%;
+    top: 92%;
     left: 30%;
     position: absolute;
   }
   .details__container__content__paragraph {
-    margin-left: 8rem;
+    color: black;
     margin-top: -15rem;
     margin-bottom: 3rem;
     line-height: 4.5rem;
@@ -1319,11 +1342,11 @@ body {
     color: black;
     opacity: 0.5;
     font-size: 2rem;
-    top: 45%;
+    top: 110%;
     left: 30%;
     position: absolute;
-    height: 50%;
-    width: 100%;
+    height: 110%;
+    width: 80%;
     background-image: url(./Assets/icons/Arrow4.svg);
     background-repeat: no-repeat;
   }
