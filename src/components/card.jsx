@@ -20,7 +20,9 @@ const Card = (props) => {
       : props.props[0] === 2
       ? 60
       : props.props[0] === 3
-      ? 70
+      ? window.visualViewport.width > 756
+        ? 62
+        : 70
       : 200;
 
   const image = props.props[0] % 2 === 1 ? tea2 : tea;

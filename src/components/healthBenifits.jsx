@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import health from "../Assets/icons/Heathbenifits.svg";
+import health2 from "../Assets/icons/Healthbenifuts2.svg";
 
 const HealthBenifits = () => {
   const [move, setMove] = useState(); //[44,54,64,74]
@@ -19,7 +20,10 @@ const HealthBenifits = () => {
           className="health__container__content__health"
           id={move > yOffset ? "card__animation" : ""}
         >
-          <img src={health} alt="Health Benifits" />
+          <img
+            src={window.visualViewport.width > 756 ? health2 : health}
+            alt="Health Benifits"
+          />
         </div>
       </div>
     </div>

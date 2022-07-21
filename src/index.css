@@ -18,3 +18,9 @@ code {
 .shop__container__content {
   width: min(98%, 35rem);
 }
+
+@media screen and (min-width: 756px) {
+  .shop__container__content {
+    width: min(98%, 38rem);
+  }
+}

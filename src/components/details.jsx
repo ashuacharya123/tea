@@ -4,7 +4,7 @@ import garden from "../Assets/mobile/Mobile_Mask Group.png";
 
 const Details = () => {
   return (
-    <div className="details__container">
+    <div className="details__container" id="explore">
       <div className="details__container__content">
         <div className="details__container__content__text ml2 mr2">
           We handpick tea leaves for the best quality

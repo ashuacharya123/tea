@@ -955,6 +955,268 @@ body {
   }
 }
 
+//todo: Media Queries
+
+//! Phone
+
+@media screen and (max-width: 370px) {
+  html {
+    font-size: 55%;
+  }
+  @media screen and (max-width: 325px) {
+    html {
+      font-size: 50%;
+    }
+  }
+  @media screen and (max-width: 312px) {
+    html {
+      font-size: 45%;
+    }
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 756px) {
+  .App {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+
+  .hero__upper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -12rem;
+
+    @media screen and (min-width: 690px) and (max-width: 710px) {
+      background-position-y: -15rem;
+    }
+    @media screen and (min-width: 710px) and (max-width: 756px) {
+      background-position-y: -20rem;
+    }
+  }
+
+  .hero__upper__text {
+    width: 75%;
+  }
+
+  .hero__upper button,
+  .hero__menu__logo,
+  .hero__upper__text {
+    margin-left: 10rem;
+  }
+
+  .hero__lower__text {
+    width: 75%;
+    margin-inline: auto;
+  }
+
+  .contact__container,
+  .footer__container {
+    width: 100%;
+  }
+}
+
+//! PC
+
+@media screen and (min-width: 756px) {
+  .hero {
+    &__mobile__menu {
+      position: fixed;
+      top: 0;
+      left: 48%;
+      width: 50%;
+      height: 10rem;
+      border: none;
+
+      a {
+        transform: scale(1.1);
+
+        .active::before {
+          top: 6rem;
+        }
+      }
+    }
+    &__content {
+      display: flex;
+      margin-top: 10rem;
+    }
+
+    &__upper {
+      flex: 80%;
+      background-image: url(./Assets/pc/pc_hero.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-position-y: 5rem;
+      height: 100vh;
+      width: 100%;
+
+      a {
+        margin-left: 6rem;
+      }
+
+      button {
+        margin-left: -0.6rem;
+        padding: 2rem 8rem 2rem 8rem;
+        font-size: 3rem;
+        margin-top: 15rem;
+        transform: translateX(-40rem);
+      }
+
+      &__text {
+        position: relative;
+        font-size: 7rem;
+        width: 80%;
+        margin-inline: 0;
+        margin-left: 6rem;
+        font-weight: 500;
+        margin-top: 5rem;
+
+        &::before {
+          height: 300%;
+          width: 50%;
+          opacity: 10%;
+          top: -150%;
+          left: -10rem;
+        }
+      }
+    }
+    &__lower {
+      flex: 30%;
+
+      &__text {
+        text-align: start;
+        font-weight: 400;
+        font-size: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      ul {
+        justify-content: flex-start;
+        gap: 5rem;
+      }
+    }
+    &__menu {
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      background: $bodyColor;
+      height: 10rem;
+
+      &__logo {
+        margin-left: 6rem;
+      }
+    }
+  }
+
+  .details__container {
+    height: 100vh;
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      &__text {
+        margin-left: 8rem;
+        text-align: start;
+        margin-top: 8rem;
+        font-size: 4rem;
+        line-height: 5rem;
+      }
+      &__image {
+        grid-area: 1/2 / span2;
+        margin-top: -30rem;
+
+        &::before {
+          content: "Our own garden";
+          color: black;
+          opacity: 0.5;
+          font-size: 2rem;
+          top: 83%;
+          left: 30%;
+          position: absolute;
+        }
+      }
+      &__paragraph {
+        margin-left: 8rem;
+        margin-top: -15rem;
+        margin-bottom: 3rem;
+        line-height: 4.5rem;
+        font-size: 2.5rem;
+        font-weight: 300;
+        position: relative;
+
+        &::after {
+          content: "";
+          color: black;
+          opacity: 0.5;
+          font-size: 2rem;
+          top: 45%;
+          left: 30%;
+          position: absolute;
+
+          height: 50%;
+          width: 100%;
+          background-image: url(./Assets/icons/Arrow4.svg);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .health__container {
+    background-color: #d3cac1;
+    height: 110vh;
+    color: black;
+    &__content {
+      height: 100%;
+      background-image: url(./Assets/pc/herbal_benifits.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      background-attachment: fixed;
+
+      &__text {
+        width: 14ch;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        margin-left: 8rem;
+        opacity: 0.6;
+        font-size: 7rem;
+
+        @media screen and (max-width: 382px) {
+          font-size: 3rem;
+        }
+      }
+
+      &__health {
+        opacity: 0;
+        margin-left: 8rem;
+        height: 60%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .shop__container {
+    max-width: 100rem;
+    margin-inline: auto;
+  }
+
+  .cart__container {
+    width: 32%;
+    right: 0rem;
+    margin-top: 10rem;
+    border-left: 1px solid black;
+  }
+}
+
 // todo : Keyframes
 
 @keyframes opacity {
@@ -1074,70 +1336,3 @@ body {
     clip-path: circle(100%);
   }
 }
-
-//todo: Media Queries
-
-//! Phone
-
-@media screen and (max-width: 370px) {
-  html {
-    font-size: 55%;
-  }
-  @media screen and (max-width: 325px) {
-    html {
-      font-size: 50%;
-    }
-  }
-  @media screen and (max-width: 312px) {
-    html {
-      font-size: 45%;
-    }
-  }
-}
-
-@media screen and (min-width: 550px) {
-  .App {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-inline: auto;
-  }
-
-  .hero__upper {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: -12rem;
-
-    @media screen and (min-width: 690px) and (max-width: 710px) {
-      background-position-y: -15rem;
-    }
-    @media screen and (min-width: 710px) and (max-width: 756px) {
-      background-position-y: -20rem;
-    }
-  }
-
-  .hero__upper__text {
-    width: 75%;
-  }
-
-  .hero__upper button,
-  .hero__menu__logo,
-  .hero__upper__text {
-    margin-left: 10rem;
-  }
-
-  .hero__lower__text {
-    width: 75%;
-    margin-inline: auto;
-  }
-
-  .contact__container,
-  .footer__container {
-    width: 100%;
-  }
-}
-
-//! PC

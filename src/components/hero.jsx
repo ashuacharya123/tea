@@ -30,12 +30,19 @@ const Hero = () => {
             <button className="ml2">Get a cup</button>
           </a>
         </div>
-        <div className="hero__lower" id="explore">
+        <div className="hero__lower">
           <h2 className="hero__lower__text ml2 mr2">
             Nutritional facts Per 100 grams
           </h2>
           <ul className="ml2 mr2">
-            <div id={move > yOffset ? "card__animation" : ""} type="animation">
+            <div
+              id={
+                move > yOffset || window.visualViewport.width > 756
+                  ? "card__animation"
+                  : ""
+              }
+              type="animation"
+            >
               <li>
                 <div num="1">37</div>
                 <span>Calories</span>
@@ -49,7 +56,14 @@ const Hero = () => {
                 <span>Protein</span>
               </li>
             </div>
-            <div id={move > yOffset ? "card__animation" : ""} type="animation">
+            <div
+              id={
+                move > yOffset || window.visualViewport.width > 756
+                  ? "card__animation"
+                  : ""
+              }
+              type="animation"
+            >
               <li>
                 <div className="">0.7g</div>
                 <span>Total Fat</span>
