@@ -19,13 +19,19 @@ const Footer = () => {
             </div>
             <hr />
             <div className="footer__content__middle__links">
-              <a href="https://www.facebook.com/iamashuacharya/">
+              <a
+                href="https://www.facebook.com/iamashuacharya/"
+                target="_blank"
+              >
                 <img src={fb} alt="" />
               </a>
-              <a href="https://www.instagram.com/iamashuacharya/">
+              <a
+                href="https://www.instagram.com/iamashuacharya/"
+                target="_blank"
+              >
                 <img src={insta} alt="" />
               </a>
-              <a href="https://github.com/ashuacharya123">
+              <a href="https://github.com/ashuacharya123" target="_blank">
                 <img src={github} alt="" />
               </a>
             </div>

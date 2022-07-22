@@ -1268,6 +1268,7 @@ body {
     -webkit-box-flex: 30%;
         -ms-flex: 30%;
             flex: 30%;
+    margin-top: 6rem;
   }
   .hero__lower__text {
     text-align: start;
