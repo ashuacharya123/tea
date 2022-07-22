@@ -1247,6 +1247,155 @@ body {
     margin-top: 10rem;
     border-left: 1px solid black;
   }
+
+  .contact__content {
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    height: 90vh;
+
+    &__text {
+      flex: 20%;
+      text-align: center;
+      font-size: 8rem;
+      font-weight: 500;
+      color: $green;
+      padding-top: 5rem;
+      @media screen and (max-height: 775px) {
+        padding-bottom: 4rem;
+      }
+    }
+    &__form {
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      background-image: url(./Assets/pc/contacts.png);
+      flex-direction: row;
+
+      &__upper {
+        flex: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: -5rem;
+
+        li {
+          width: 70%;
+          input {
+            width: 100%;
+          }
+        }
+      }
+      &__lower {
+        flex: 40%;
+      }
+    }
+  }
+
+  .footer__container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-height: 740px) {
+      height: 65vh;
+    }
+    @media screen and (max-height: 700px) {
+      height: 85vh;
+    }
+    @media screen and (max-height: 600px) {
+      height: 95vh;
+    }
+    @media screen and (min-height: 900px) {
+      height: 65vh;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      aspect-ratio: 1;
+      height: 400%;
+      position: absolute;
+      top: 0%;
+      left: -12%;
+      // right: -100%;
+      background-color: #343434;
+      z-index: -1;
+      border-radius: 50%;
+      display: none;
+    }
+  }
+  .footer__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    color: $white;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      aspect-ratio: 1;
+      height: 400%;
+      position: absolute;
+      top: 0%;
+      left: -98%;
+      // right: -100%;
+      background-color: #343434;
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    @media screen and (max-height: 658px) {
+      &__upper {
+        transform: scale(0.7);
+        margin-left: -3rem;
+      }
+    }
+
+    &__upper {
+      position: absolute;
+      top: -10%;
+      left: -30%;
+    }
+
+    &__middle {
+      &__text {
+        font-size: 2.5rem;
+      }
+      &__email {
+        font-size: 1.2rem;
+        margin: 2rem 0 1rem 0;
+      }
+      hr {
+        width: 20.55rem;
+      }
+      &__links {
+        margin-top: 3rem;
+        display: flex;
+        gap: 2rem;
+        a {
+        }
+      }
+    }
+    &__lower {
+      margin-top: 14rem;
+
+      &__text {
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        span {
+          color: $baseColor;
+        }
+      }
+    }
+  }
 }
 
 // todo : Keyframes
