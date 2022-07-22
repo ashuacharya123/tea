@@ -607,9 +607,14 @@ body {
           backface-visibility: hidden;
 }
 
-.shop__container__content__card__container__card__details span:nth-of-type(2) button:hover, .shop__container__content__card__container__card__details span:nth-of-type(2) button:active, .shop__container__content__card__container__card__details span:nth-of-type(2) button:focus {
+.shop__container__content__card__container__card__details span:nth-of-type(2) button:hover, .shop__container__content__card__container__card__details span:nth-of-type(2) button:focus {
   -webkit-animation: clipPath 1s ease;
           animation: clipPath 1s ease;
+}
+
+.shop__container__content__card__container__card__details span:nth-of-type(2) button:active {
+  -webkit-animation: click 2s;
+          animation: click 2s;
 }
 
 .shop__container__content__card__container__card__details span:nth-of-type(2) button:nth-of-type(1) {
@@ -743,9 +748,14 @@ body {
           backface-visibility: hidden;
 }
 
-.contact__content__form__upper button:hover, .contact__content__form__upper button:active, .contact__content__form__upper button:focus {
+.contact__content__form__upper button:hover, .contact__content__form__upper button:focus {
   -webkit-animation: clipPath 1s ease;
           animation: clipPath 1s ease;
+}
+
+.contact__content__form__upper button:active {
+  -webkit-animation: click 2s;
+          animation: click 2s;
 }
 
 .contact__content__form__lower__text {
@@ -767,6 +777,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
+}
+
+.contact__content__form__lower__links a:hover, .contact__content__form__lower__links a:active, .contact__content__form__lower__links a:focus {
+  -webkit-animation: click 1s;
+          animation: click 1s;
 }
 
 .footer__container {
@@ -819,6 +834,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
+}
+
+.footer__content__middle__links a:hover, .footer__content__middle__links a:active, .footer__content__middle__links a:target {
+  -webkit-animation: click 1s;
+          animation: click 1s;
 }
 
 .footer__content__lower {
@@ -878,9 +898,14 @@ body {
           backface-visibility: hidden;
 }
 
-.footer__content__lower button:hover, .footer__content__lower button:active, .footer__content__lower button:focus {
+.footer__content__lower button:hover, .footer__content__lower button:focus {
   -webkit-animation: clipPath 1s ease;
           animation: clipPath 1s ease;
+}
+
+.footer__content__lower button:active {
+  -webkit-animation: click 2s;
+          animation: click 2s;
 }
 
 #cartShow {
@@ -1022,6 +1047,11 @@ body {
   padding: 0.3rem 0.5rem 0.3rem 0.5rem;
 }
 
+.cart__container__content__upper__details span:nth-of-type(1) button:active {
+  -webkit-animation: click 2s;
+          animation: click 2s;
+}
+
 .cart__container__content__upper__details span:nth-of-type(2) {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1048,6 +1078,11 @@ body {
   width: 15%;
   aspect-ratio: 1;
   background-color: #e7d400;
+}
+
+.cart__container__content__upper__details span:nth-of-type(2) button:active {
+  -webkit-animation: click 2s;
+          animation: click 2s;
 }
 
 .cart__container__content__upper__details span:nth-of-type(2) button:nth-of-type(3) {
@@ -1112,6 +1147,11 @@ body {
   font-family: inherit;
   padding: 1rem 2rem 1rem 2rem;
   border-radius: 0.5rem;
+}
+
+.cart__container__content__lower span button:active {
+  -webkit-animation: click 2s;
+          animation: click 2s;
 }
 
 .cart__container__content__lower span button:nth-of-type(1) {
@@ -2003,6 +2043,36 @@ body {
   100% {
     -webkit-clip-path: circle(100%);
             clip-path: circle(100%);
+  }
+}
+
+@-webkit-keyframes click {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes click {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 /*# sourceMappingURL=App.css.map */

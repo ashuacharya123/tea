@@ -517,9 +517,12 @@ body {
               backface-visibility: hidden;
 
               &:hover,
-              &:active,
               &:focus {
                 animation: clipPath 1s ease;
+              }
+
+              &:active {
+                animation: click 2s;
               }
 
               &:nth-of-type(1) {
@@ -638,9 +641,12 @@ body {
         backface-visibility: hidden;
 
         &:hover,
-        &:active,
         &:focus {
           animation: clipPath 1s ease;
+        }
+
+        &:active {
+          animation: click 2s;
         }
       }
     }
@@ -660,6 +666,11 @@ body {
         display: flex;
         gap: 2rem;
         a {
+          &:hover,
+          &:active,
+          &:focus {
+            animation: click 1s;
+          }
         }
       }
     }
@@ -714,6 +725,11 @@ body {
       display: flex;
       gap: 2rem;
       a {
+        &:hover,
+        &:active,
+        &:target {
+          animation: click 1s;
+        }
       }
     }
   }
@@ -768,9 +784,11 @@ body {
       backface-visibility: hidden;
 
       &:hover,
-      &:active,
       &:focus {
         animation: clipPath 1s ease;
+      }
+      &:active {
+        animation: click 2s;
       }
     }
   }
@@ -885,6 +903,10 @@ body {
               border: none;
               border-radius: 2rem;
               padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+
+              &:active {
+                animation: click 2s;
+              }
             }
           }
           &:nth-of-type(2) {
@@ -904,6 +926,9 @@ body {
               width: 15%;
               aspect-ratio: 1;
               background-color: $baseColor;
+              &:active {
+                animation: click 2s;
+              }
 
               &:nth-of-type(3) {
                 margin-left: 1rem;
@@ -951,6 +976,10 @@ body {
           font-family: inherit;
           padding: 1rem 2rem 1rem 2rem;
           border-radius: 0.5rem;
+
+          &:active {
+            animation: click 2s;
+          }
 
           &:nth-of-type(1) {
             background-color: transparent;
@@ -1596,5 +1625,17 @@ body {
   }
   100% {
     clip-path: circle(100%);
+  }
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
   }
 }
