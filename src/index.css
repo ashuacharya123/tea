@@ -19,8 +19,18 @@ code {
   width: min(98%, 35rem);
 }
 
-@media screen and (min-width: 756px) {
+@media screen and (min-width: 656px) {
   .shop__container__content {
     width: min(98%, 38rem);
+  }
+}
+@media screen and (min-width: 656px) and (max-width: 955px) {
+  .shop__container__content {
+    width: min(98%, 40rem);
+  }
+}
+@media screen and (min-width: 656px) and (max-width: 850px) {
+  .shop__container__content {
+    width: min(89%, 50rem);
   }
 }

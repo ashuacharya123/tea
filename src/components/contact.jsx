@@ -5,7 +5,7 @@ import github from "../Assets/icons/github.svg";
 
 const Contact = () => {
   return (
-    <div className="contact__container" id="contact">
+    <div className="contact__container">
       <div className="contact__content ">
         <div className="contact__content__text ml2 mr2">Contact us</div>
         <form className="contact__content__form">
