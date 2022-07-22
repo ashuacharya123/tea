@@ -9,11 +9,14 @@ const Shop = () => {
     [3, 3.99, 5.99, 40, "Tulsi"],
   ];
   return (
-    <div className="shop__container ml2 mr2" id="shop">
-      {cardList.map((card) => {
-        return <Card key={card} props={card} />;
-      })}
-    </div>
+    <>
+      <div className="shop__container ml2 mr2" id="shop">
+        {cardList.map((card) => {
+          return <Card key={card} props={card} />;
+        })}
+      </div>
+      <div id="contact"></div>
+    </>
   );
 };
 
