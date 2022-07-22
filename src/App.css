@@ -1441,7 +1441,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     gap: 5rem;
-    height: 90vh;
+    height: 80vh;
   }
   .contact__content__text {
     -webkit-box-flex: 20%;
@@ -1451,7 +1451,7 @@ body {
     font-size: 8rem;
     font-weight: 500;
     color: #5e905d;
-    padding-top: 5rem;
+    padding-top: 5%;
   }
 }
 
@@ -1493,14 +1493,20 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: -5rem;
   }
   .contact__content__form__upper li {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
     width: 70%;
   }
   .contact__content__form__upper li input {
     width: 100%;
+  }
+  .contact__content__form__upper button {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
   }
   .contact__content__form__lower {
     -webkit-box-flex: 40%;
